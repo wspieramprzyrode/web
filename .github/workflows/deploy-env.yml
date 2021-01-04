@@ -1,0 +1,41 @@
+name: 'Deploy dev env'
+on:
+  push:
+    branches:
+      - amplify
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12.x
+      - name: Install dependencies
+        run: npm install
+      - name: Test
+        run: npm test
+        env:
+          CI: true
+      - name: Configure amplify
+        uses: ambientlight/amplify-cli-action@0.2.1
+        with:
+          amplify_command: configure
+          amplify_env: dev
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: eu-west-1
+      - name: Deploy
+        uses: ambientlight/amplify-cli-action@0.2.1
+        with:
+          amplify_command: publish
+          amplify_env: dev
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: eu-west-1
