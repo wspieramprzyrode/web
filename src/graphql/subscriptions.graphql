@@ -1,0 +1,151 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreatePlaceCategory {
+  onCreatePlaceCategory {
+    id
+    name
+    createdAt
+    updatedAt
+    places {
+      nextToken
+    }
+  }
+}
+subscription OnUpdatePlaceCategory {
+  onUpdatePlaceCategory {
+    id
+    name
+    createdAt
+    updatedAt
+    places {
+      nextToken
+    }
+  }
+}
+subscription OnDeletePlaceCategory {
+  onDeletePlaceCategory {
+    id
+    name
+    createdAt
+    updatedAt
+    places {
+      nextToken
+    }
+  }
+}
+subscription OnCreatePicture {
+  onCreatePicture {
+    id
+    placeID
+    owner
+    file {
+      bucket
+      region
+      key
+    }
+    createdAt
+    updatedAt
+    guardians
+  }
+}
+subscription OnUpdatePicture {
+  onUpdatePicture {
+    id
+    placeID
+    owner
+    file {
+      bucket
+      region
+      key
+    }
+    createdAt
+    updatedAt
+    guardians
+  }
+}
+subscription OnDeletePicture {
+  onDeletePicture {
+    id
+    placeID
+    owner
+    file {
+      bucket
+      region
+      key
+    }
+    createdAt
+    updatedAt
+    guardians
+  }
+}
+subscription OnCreatePlace {
+  onCreatePlace {
+    id
+    categoryID
+    location {
+      latitude
+      longitude
+    }
+    description
+    guardians
+    createdAt
+    updatedAt
+    category {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+    pictures {
+      nextToken
+    }
+    owner
+  }
+}
+subscription OnUpdatePlace {
+  onUpdatePlace {
+    id
+    categoryID
+    location {
+      latitude
+      longitude
+    }
+    description
+    guardians
+    createdAt
+    updatedAt
+    category {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+    pictures {
+      nextToken
+    }
+    owner
+  }
+}
+subscription OnDeletePlace {
+  onDeletePlace {
+    id
+    categoryID
+    location {
+      latitude
+      longitude
+    }
+    description
+    guardians
+    createdAt
+    updatedAt
+    category {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+    pictures {
+      nextToken
+    }
+    owner
+  }
+}

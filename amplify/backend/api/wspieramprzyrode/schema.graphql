@@ -1,0 +1,95 @@
+type User {
+  Username: String!
+  UserAttributes: [Value]
+  UserCreateDate: String
+  UserLastModifiedDate: String
+  Enabled: Boolean
+  UserStatus: UserStatus
+  MFAOptions: [MFAOption]
+  PreferredMfaSetting: String
+  UserMFASettingList: String
+}
+type Value {
+  Name: String!
+  Value: String
+}
+type MFAOption {
+  DeliveryMedium: String
+  AttributeName: String
+}
+enum UserStatus {
+  UNCONFIRMED
+  CONFIRMED
+  ARCHIVED
+  COMPROMISED
+  UNKNOWN
+  RESET_REQUIRED
+  FORCE_CHANGE_PASSWORD
+}
+
+type Location {
+  latitude: Float!
+  longitude: Float!
+}
+type S3Object {
+  bucket: String!
+  region: String!
+  key: String!
+}
+
+type PlaceCategory
+  @model
+  @auth(
+    rules: [
+      { allow: groups, groups: ["Admin"] }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
+  id: ID!
+  name: String!
+  places: [Place] @connection(keyName: "byCategory", fields: ["id"])
+}
+
+type Picture
+  @model
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: owner, ownerField: "guardians", operations: [update,delete] }
+      { allow: groups, groups: ["Admin"] }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  )
+  @key(name: "byPlace", fields: ["placeID"])
+  {
+  id: ID!
+  placeID: ID
+  owner: String
+  file: S3Object
+}
+
+type Place
+  @model
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: owner, ownerField: "guardians", operations: [update] }
+      { allow: groups, groups: ["Admin"] }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  )
+  @key(name: "byCategory", fields: ["categoryID"]) {
+  id: ID!
+  categoryID: ID!
+  location: Location!
+  description: String
+  category: PlaceCategory @connection(fields: ["categoryID"])
+  guardians: [String]
+  pictures: [Picture] @connection(keyName: "byPlace", fields: ["id"])
+}
+# type Query {
+#   me: User @function(name: "ResolverFunction")
+# }

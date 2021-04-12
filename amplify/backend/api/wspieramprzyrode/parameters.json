@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "wspieramprzyrode",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authwspieramprzyrode0a6cfb2b",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
