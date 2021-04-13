@@ -1,0 +1,12 @@
+<p-table [value]="categories" [paginator]="true" [rows]="10" [showCurrentPageReport]="true">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Name</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-category>
+        <tr>
+            <td>{{category.name}}</td>
+        </tr>
+    </ng-template>
+</p-table>

@@ -17,6 +17,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies":[
+            ],
             "outputPath": "dist/wspieramprzyrode",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -28,19 +30,13 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "src/styles",
-                "src/styles/themes/default"
-              ]
-            },
             "styles": [
-              "./node_modules/primeng/resources/themes/vela-blue/theme.css",
-              "./node_modules/primeng/resources/primeng.min.css",
               "./node_modules/primeicons/primeicons.css",
-              "./node_modules/primeflex/primeflex.css",
+              "./node_modules/primeng/resources/themes/luna-blue/theme.css",
+              "./node_modules/primeng/resources/primeng.min.css",
               "./node_modules/@fortawesome/fontawesome-free/css/all.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/primeflex/primeflex.css"
             ],
             "scripts": [
               "./node_modules/chart.js/dist/Chart.js"

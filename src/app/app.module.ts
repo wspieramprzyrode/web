@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Prime NG
 import { MessageService } from 'primeng/api';
@@ -7,6 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { LayoutModule } from './shared/layout/layout.module';
+import { HomepageModule } from './features/homepage/homepage.module';
+import { SignInModule } from './features/sign-in/sign-in.module';
 
 @NgModule({
   declarations: [
@@ -22,10 +25,14 @@ import { environment } from '../environments/environment';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
+    LayoutModule,
+    HomepageModule,
+    SignInModule
   ],
   exports: [],
   providers: [
-    MessageService
+    MessageService,
+    Title
   ],
   bootstrap: [AppComponent]
 })
