@@ -1,0 +1,11 @@
+@forward 'overrides/primeng';
+@forward 'overrides/fortawesome';
+html,
+body {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}

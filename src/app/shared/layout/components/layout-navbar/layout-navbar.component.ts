@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-layout-navbar',
-  templateUrl: './layout-navbar.component.html',
-  styleUrls: ['./layout-navbar.component.scss']
+  templateUrl: './layout-navbar.component.html'
 })
 export class LayoutNavbarComponent implements OnInit {
 

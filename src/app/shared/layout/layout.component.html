@@ -1,10 +1,20 @@
-<header>
-  <app-layout-navbar></app-layout-navbar>
-</header>
-<main>
-  <app-layout-sidebar></app-layout-sidebar>
-  <router-outlet></router-outlet>
-</main>
-<footer>
-  <app-layout-footer></app-layout-footer>
-</footer>
+<div class="main">
+  <header>
+    <app-layout-navbar></app-layout-navbar>
+  </header>
+  <main>
+    <div class="p-d-flex">
+      <div class="p-d-column p-d-row">
+        <app-layout-sidebar></app-layout-sidebar>
+      </div>
+      <div class="p-d-column">
+        <div class="p-d-flex p-d-column p-d-row">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <app-layout-footer></app-layout-footer>
+  </footer>
+</div>

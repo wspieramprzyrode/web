@@ -2,17 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
+import { PrimeNGConfig } from 'primeng/api';
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
-    private titleService: Title) { }
+    private titleService: Title, private primengConfig: PrimeNGConfig) { }
 
   ngOnInit() {
+    this.primengConfig.ripple = true;
     const appTitle = this.titleService.getTitle();
     this.router
       .events.pipe(

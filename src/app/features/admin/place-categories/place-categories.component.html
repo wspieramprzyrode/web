@@ -1,12 +1,28 @@
-<p-table [value]="categories" [paginator]="true" [rows]="10" [showCurrentPageReport]="true">
+<p-card>
+  <ng-template pTemplate="header">
+    <h1 style="font-weight: normal">Place categories</h1>
+  </ng-template>
+  <p-button
+    label="Add new"
+    icon="pi pi-check"
+    iconPos="left"
+    (onClick)="createCategory()"
+  ></p-button>
+  <p-table
+    [value]="categories"
+    [paginator]="true"
+    [rows]="10"
+    [showCurrentPageReport]="true"
+  >
     <ng-template pTemplate="header">
-        <tr>
-            <th>Name</th>
-        </tr>
+      <tr>
+        <th>Name</th>
+      </tr>
     </ng-template>
     <ng-template pTemplate="body" let-category>
-        <tr>
-            <td>{{category.name}}</td>
-        </tr>
+      <tr>
+        <td>{{ category.name }}</td>
+      </tr>
     </ng-template>
-</p-table>
+  </p-table>
+</p-card>

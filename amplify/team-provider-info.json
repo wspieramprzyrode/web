@@ -16,5 +16,23 @@
         "wspieramprzyrode0a6cfb2b": {}
       }
     }
+  },
+  "wojtas": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-wspieramprzyrode-wojtas-110535-authRole",
+      "UnauthRoleArn": "arn:aws:iam::415139713725:role/amplify-wspieramprzyrode-wojtas-110535-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::415139713725:role/amplify-wspieramprzyrode-wojtas-110535-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-wspieramprzyrode-wojtas-110535-deployment",
+      "UnauthRoleName": "amplify-wspieramprzyrode-wojtas-110535-unauthRole",
+      "StackName": "amplify-wspieramprzyrode-wojtas-110535",
+      "StackId": "arn:aws:cloudformation:eu-west-1:415139713725:stack/amplify-wspieramprzyrode-wojtas-110535/93d6a290-9d00-11eb-ac9a-0a9088150def",
+      "AmplifyAppId": "d3nbgz0yx5w8d1"
+    },
+    "categories": {
+      "auth": {
+        "wspieramprzyrode0a6cfb2b": {}
+      }
+    }
   }
 }

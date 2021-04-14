@@ -31,15 +31,16 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
-              "./node_modules/primeicons/primeicons.css",
-              "./node_modules/primeng/resources/themes/luna-blue/theme.css",
-              "./node_modules/primeng/resources/primeng.min.css",
-              "./node_modules/@fortawesome/fontawesome-free/css/all.css",
-              "src/styles.scss",
-              "./node_modules/primeflex/primeflex.css"
+              "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles",
+                "src/styles/themes/default"
+              ]
+            },
             "scripts": [
-              "./node_modules/chart.js/dist/Chart.js"
+              "node_modules/chart.js/dist/Chart.js"
             ]
           },
           "configurations": {
