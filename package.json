@@ -6,6 +6,8 @@
     "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
+    "build:ci": "ng build --prod --sourceMap=false",
+    "test:ci": "ng test --watch=false --code-coverage --source-map true",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "gql-complile": "amplify api gql-compile"
