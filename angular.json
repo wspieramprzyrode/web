@@ -104,6 +104,12 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles",
+                "src/styles/themes/default"
+              ]
+            },
             "styles": [
               "src/styles.scss"
             ],
